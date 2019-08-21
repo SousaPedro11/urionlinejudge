@@ -13,20 +13,14 @@ public class P_1009 {
         final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-        int cod;
-        int num;
-        double valor;
+        final String nome = scanner.next();
+        final double salarioFixo = scanner.nextDouble();
+        final double vendas = scanner.nextDouble();
+        final double comissao = 0.15;
 
-        double total = 0.0;
+        final double salario = salarioFixo + (vendas * comissao);
 
-        for (int i = 0; i < 2; i++) {
-            cod = scanner.nextInt();
-            num = scanner.nextInt();
-            valor = scanner.nextDouble();
+        System.out.println("TOTAL = R$ " + decimalFormat.format(salario));
 
-            total += num * valor;
-        }
-
-        System.out.println("VALOR A PAGAR: R$ " + decimalFormat.format(total));
     }
 }
