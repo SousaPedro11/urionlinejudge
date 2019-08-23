@@ -18,9 +18,30 @@ public class P_1038 {
         try {
             scanner = new Scanner(System.in);
 
-            final double n = scanner.nextDouble();
+            final int cod = scanner.nextInt();
+            final int quant = scanner.nextInt();
 
-            sb.append(decimalFormat.format(n));
+            double preco = 0;
+
+            switch (cod) {
+                case 1:
+                    preco = 4.00;
+                    break;
+                case 2:
+                    preco = 4.50;
+                    break;
+                case 3:
+                    preco = 5.00;
+                    break;
+                case 4:
+                    preco = 2.00;
+                    break;
+                case 5:
+                    preco = 1.50;
+                    break;
+            }
+
+            sb.append("Total: R$ ").append(decimalFormat.format(preco * quant));
 
             System.out.println(sb.toString());
         } finally {
