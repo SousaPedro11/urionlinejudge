@@ -39,6 +39,7 @@ public class P_1049 {
                     nome = "vaca";
 
                 }
+
             } else if (p1.equalsIgnoreCase("invertebrado")) {
                 if (p2.equalsIgnoreCase("inseto")
                                 && p3.equalsIgnoreCase("hematofago")) {

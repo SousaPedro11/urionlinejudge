@@ -36,6 +36,7 @@ public class P_1048 {
 
             } else if (salario > 2000) {
                 percentual = 4;
+
             }
 
             reajuste = (salario * percentual) / 100;
@@ -53,6 +54,7 @@ public class P_1048 {
                             .append(" %");
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

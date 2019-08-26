@@ -8,52 +8,45 @@ public class P_1021 {
     public static void main(final String[] args) {
 
         Locale.setDefault(Locale.US);
+
         Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
+
         try {
             scanner = new Scanner(System.in);
 
             double n = scanner.nextDouble();
+
             double m = n * 100;
 
             final int n100, n50, n20, n10, n5, n2;
+
             final int m100, m50, m25, m10, m5, m1;
 
             n100 = (int) (n / 100);
-            n %= 100;
 
-            n50 = (int) (n / 50);
-            n %= 50;
+            n50 = (int) ((n %= 100) / 50);
 
-            n20 = (int) (n / 20);
-            n %= 20;
+            n20 = (int) ((n %= 50) / 20);
 
-            n10 = (int) (n / 10);
-            n %= 10;
+            n10 = (int) ((n %= 20) / 10);
 
-            n5 = (int) (n / 5);
-            n %= 5;
+            n5 = (int) ((n %= 10) / 5);
 
-            n2 = (int) (n / 2);
-            n %= 2;
+            n2 = (int) ((n %= 5) / 2);
 
-            m100 = (int) (n / 1);
-            m %= 100;
+            m100 = (int) ((n %= 2) / 1);
 
-            m50 = (int) (m / 50);
-            m %= 50;
+            m50 = (int) ((m %= 100) / 50);
 
-            m25 = (int) (m / 25);
-            m %= 25;
+            m25 = (int) ((m %= 50) / 25);
 
-            m10 = (int) (m / 10);
-            m %= 10;
+            m10 = (int) ((m %= 25) / 10);
 
-            m5 = (int) (m / 5);
-            m %= 5;
+            m5 = (int) ((m %= 10) / 5);
 
-            m1 = (int) m;
+            m1 = (int) (m %= 5);
 
-            final StringBuilder sb = new StringBuilder();
             sb.append("NOTAS:")
                             .append("\n");
             sb.append(n100)
@@ -96,6 +89,7 @@ public class P_1021 {
                             .append(" moeda(s) de R$ 0.01");
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

@@ -28,6 +28,7 @@ public class P_1042 {
 
             list.forEach(i -> {
                 sb.append(i).append("\n");
+
             });
 
             sb.append("\n");
@@ -39,6 +40,7 @@ public class P_1042 {
             sb.append(c);
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

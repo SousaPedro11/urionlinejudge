@@ -33,19 +33,23 @@ public class P_1040 {
             }
 
             sb.append("Media: ")
-                            .append(decimalFormat.format(media));
+                            .append(decimalFormat
+                                            .format(media));
             if (media >= 7.0) {
                 sb.append("\n");
                 sb.append("Aluno aprovado.");
+
             } else if (media < 5.0) {
                 sb.append("\n");
                 sb.append("Aluno reprovado.");
+
             } else if ((media >= 5.0) && (media <= 6.9)) {
                 sb.append("\n");
                 sb.append("Aluno em exame.")
                                 .append("\n");
                 sb.append("Nota do exame: ")
-                                .append(decimalFormat.format(exame))
+                                .append(decimalFormat
+                                                .format(exame))
                                 .append("\n");
 
                 media = (media + exame) / 2.0;
@@ -53,15 +57,20 @@ public class P_1040 {
                 if (media >= 5.0) {
                     sb.append("Aluno aprovado.")
                                     .append("\n");
+
                 } else {
                     sb.append("Aluno reprovado")
                                     .append("\n");
+
                 }
                 sb.append("Media final: ")
-                                .append(decimalFormat.format(media));
+                                .append(decimalFormat
+                                                .format(media));
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

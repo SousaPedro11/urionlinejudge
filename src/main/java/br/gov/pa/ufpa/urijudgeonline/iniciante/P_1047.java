@@ -37,21 +37,25 @@ public class P_1047 {
                                 .append(" HORA(S) E ")
                                 .append(deltam + 60)
                                 .append(" MINUTO(S)");
+
             } else if ((deltah > 0) && (deltam < 0)) {
                 sb.append("O JOGO DUROU ")
                                 .append(--deltah)
                                 .append(" HORA(S) E ")
                                 .append(deltam + 60)
                                 .append(" MINUTO(S)");
+
             } else {
                 sb.append("O JOGO DUROU ")
                                 .append(deltah)
                                 .append(" HORA(S) E ")
                                 .append(deltam)
                                 .append(" MINUTO(S)");
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

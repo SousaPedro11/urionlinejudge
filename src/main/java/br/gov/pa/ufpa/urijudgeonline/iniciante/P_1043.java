@@ -30,13 +30,16 @@ public class P_1043 {
                 sb.append("Perimetro = ")
                                 .append(decimalFormat
                                                 .format(a + b + c));
+
             } else {
                 sb.append("Area = ")
                                 .append(decimalFormat
                                                 .format(((a + b) * c) / 2.0));
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

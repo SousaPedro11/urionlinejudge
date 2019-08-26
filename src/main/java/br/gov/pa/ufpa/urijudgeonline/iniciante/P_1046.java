@@ -22,21 +22,26 @@ public class P_1046 {
 
             if (delta == 0) {
                 sb.append("O JOGO DUROU 24 HORA(S)");
+
             } else if (delta < 0) {
                 sb.append("O JOGO DUROU ")
                                 .append(24 + delta)
                                 .append(" HORA(S)");
+
             } else if (delta > 24) {
                 sb.append("O JOGO DUROU ")
                                 .append(delta - 24)
                                 .append(" HORA(S)");
+
             } else {
                 sb.append("O JOGO DUROU ")
                                 .append(delta)
                                 .append(" HORA(S)");
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

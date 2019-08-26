@@ -27,18 +27,24 @@ public class P_1036 {
             if ((a != 0) && !(delta < 0)) {
 
                 final double r1 = (-b + Math.sqrt(delta)) / (2 * a);
+
                 final double r2 = (-b - Math.sqrt(delta)) / (2 * a);
 
                 sb.append("R1 = ")
-                                .append(decimalFormat.format(r1))
+                                .append(decimalFormat
+                                                .format(r1))
                                 .append("\n");
                 sb.append("R2 = ")
-                                .append(decimalFormat.format(r2));
+                                .append(decimalFormat
+                                                .format(r2));
+
             } else {
                 sb.append("Impossivel calcular");
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

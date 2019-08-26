@@ -41,9 +41,12 @@ public class P_1038 {
                     break;
             }
 
-            sb.append("Total: R$ ").append(decimalFormat.format(preco * quant));
+            sb.append("Total: R$ ")
+                            .append(decimalFormat
+                                            .format(preco * quant));
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

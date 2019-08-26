@@ -21,13 +21,15 @@ public class P_1035 {
             final int d = scanner.nextInt();
 
             if ((b > c) && (d > a) && ((c + d) > (a + b)) && (c > 0) && (d > 0) && ((a % 2) == 0)) {
-
                 sb.append("Valores aceitos");
+
             } else {
                 sb.append("Valores nao aceitos");
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

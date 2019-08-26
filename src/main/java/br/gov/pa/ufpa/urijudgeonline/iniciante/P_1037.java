@@ -31,9 +31,11 @@ public class P_1037 {
 
             } else {
                 sb.append("Fora de intervalo");
+
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

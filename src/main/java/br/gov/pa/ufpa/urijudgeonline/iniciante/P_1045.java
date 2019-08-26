@@ -56,6 +56,7 @@ public class P_1045 {
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();

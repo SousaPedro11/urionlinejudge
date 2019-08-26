@@ -38,6 +38,7 @@ public class P_1050 {
             }
 
             System.out.println(sb.toString());
+
         } finally {
             if (scanner != null) {
                 scanner.close();
