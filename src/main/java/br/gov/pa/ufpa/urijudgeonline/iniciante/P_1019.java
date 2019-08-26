@@ -9,15 +9,31 @@ public class P_1019 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int n = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        final int horas = n / 3600;
-        final int minutos = (n % 3600) / 60;
-        final int segundos = (n % 3600) % 60;
+            final int n = scanner.nextInt();
 
-        System.out.println(horas + ":" + minutos + ":" + segundos);
+            final int horas = n / 3600;
+            final int minutos = (n % 3600) / 60;
+            final int segundos = (n % 3600) % 60;
+
+            sb.append(horas)
+                            .append(":")
+                            .append(minutos)
+                            .append(":")
+                            .append(segundos);
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
 
     }
 }

@@ -10,18 +10,31 @@ public class P_1006 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
-
         final DecimalFormat decimalFormat = new DecimalFormat("0.0");
 
-        final double a = scanner.nextDouble();
-        final double b = scanner.nextDouble();
-        final double c = scanner.nextDouble();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double media = ((a * 2.0) + (b * 3.0) + (c * 5.0)) / 10;
+        try {
+            scanner = new Scanner(System.in);
 
-        System.out.println("MEDIA = " + decimalFormat.format(media));
+            final double a = scanner.nextDouble();
+            final double b = scanner.nextDouble();
+            final double c = scanner.nextDouble();
+
+            final double media = ((a * 2.0) + (b * 3.0) + (c * 5.0)) / 10;
+
+            sb.append("MEDIA = ")
+                            .append(decimalFormat
+                                            .format(media));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
 
     }
-
 }

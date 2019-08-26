@@ -9,32 +9,53 @@ public class P_1018 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int valorInicial = scanner.nextInt();
-        int valor = valorInicial;
+        try {
+            scanner = new Scanner(System.in);
 
-        final int cem = valor / 100;
-        valor %= 100;
-        final int cinquenta = valor / 50;
-        valor %= 50;
-        final int vinte = valor / 20;
-        valor %= 20;
-        final int dez = valor / 10;
-        valor %= 10;
-        final int cinco = valor / 5;
-        valor %= 5;
-        final int dois = valor / 2;
-        valor %= 2;
-        final int um = valor;
+            final int valorInicial = scanner.nextInt();
+            int valor = valorInicial;
 
-        System.out.println(valorInicial);
-        System.out.println(cem + " nota(s) de R$ 100,00");
-        System.out.println(cinquenta + " nota(s) de R$ 50,00");
-        System.out.println(vinte + " nota(s) de R$ 20,00");
-        System.out.println(dez + " nota(s) de R$ 10,00");
-        System.out.println(cinco + " nota(s) de R$ 5,00");
-        System.out.println(dois + " nota(s) de R$ 2,00");
-        System.out.println(um + " nota(s) de R$ 1,00");
+            final int cem = valor / 100;
+            final int cinquenta = (valor %= 100) / 50;
+            final int vinte = (valor %= 50) / 20;
+            final int dez = (valor %= 20) / 10;
+            final int cinco = (valor %= 10) / 5;
+            final int dois = (valor %= 5) / 2;
+            final int um = (valor %= 2);
+
+            sb.append(valorInicial)
+                            .append("\n");
+            sb.append(cem)
+                            .append(" nota(s) de R$ 100,00")
+                            .append("\n");
+            sb.append(cinquenta)
+                            .append(" nota(s) de R$ 50,00")
+                            .append("\n");
+            sb.append(vinte)
+                            .append(" nota(s) de R$ 20,00")
+                            .append("\n");
+            sb.append(dez)
+                            .append(" nota(s) de R$ 10,00")
+                            .append("\n");
+            sb.append(cinco)
+                            .append(" nota(s) de R$ 5,00")
+                            .append("\n");
+            sb.append(dois)
+                            .append(" nota(s) de R$ 2,00")
+                            .append("\n");
+            sb.append(um)
+                            .append(" nota(s) de R$ 1,00");
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

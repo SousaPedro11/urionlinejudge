@@ -24,25 +24,53 @@ public class P_1012 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.000");
 
-        final double a = scanner.nextDouble();
-        final double b = scanner.nextDouble();
-        final double c = scanner.nextDouble();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double PI = 3.14159;
+        try {
+            scanner = new Scanner(System.in);
 
-        final double triangulo = (a * c) / 2.0;
-        final double circulo = PI * Math.pow(c, 2);
-        final double trapezio = ((a + b) * c) / 2.0;
-        final double quadrado = Math.pow(b, 2);
-        final double retangulo = a * b;
+            final double a = scanner.nextDouble();
+            final double b = scanner.nextDouble();
+            final double c = scanner.nextDouble();
 
-        System.out.println("TRIANGULO: " + decimalFormat.format(triangulo));
-        System.out.println("CIRCULO: " + decimalFormat.format(circulo));
-        System.out.println("TRAPEZIO: " + decimalFormat.format(trapezio));
-        System.out.println("QUADRADO: " + decimalFormat.format(quadrado));
-        System.out.println("RETANGULO: " + decimalFormat.format(retangulo));
+            final double PI = 3.14159;
+
+            final double triangulo = (a * c) / 2.0;
+            final double circulo = PI * Math.pow(c, 2);
+            final double trapezio = ((a + b) * c) / 2.0;
+            final double quadrado = Math.pow(b, 2);
+            final double retangulo = a * b;
+
+            sb.append("TRIANGULO: ")
+                            .append(decimalFormat
+                                            .format(triangulo))
+                            .append("\n");
+            sb.append("CIRCULO: ")
+                            .append(decimalFormat
+                                            .format(circulo))
+                            .append("\n");
+            sb.append("TRAPEZIO: ")
+                            .append(decimalFormat
+                                            .format(trapezio))
+                            .append("\n");
+            sb.append("QUADRADO: ")
+                            .append(decimalFormat
+                                            .format(quadrado))
+                            .append("\n");
+            sb.append("RETANGULO: ")
+                            .append(decimalFormat
+                                            .format(retangulo));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

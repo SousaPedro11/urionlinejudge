@@ -9,14 +9,26 @@ public class P_1016 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        // 1km/2min
-        final int distancia = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        final int tempo = distancia * 2;
+            final int distancia = scanner.nextInt();
 
-        System.out.println(tempo + " minutos");
+            final int tempo = distancia * 2;
+
+            sb.append(tempo)
+                            .append(" minutos");
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-
 }

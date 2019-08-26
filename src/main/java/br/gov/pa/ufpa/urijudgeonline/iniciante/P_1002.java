@@ -10,16 +10,31 @@ public class P_1002 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
-        final DecimalFormat df = new DecimalFormat("0.0000");
+        final DecimalFormat decimalFormat = new DecimalFormat("0.0000");
 
-        final double PI = 3.14159;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double r = scanner.nextDouble();
+        try {
+            scanner = new Scanner(System.in);
 
-        final double area = PI * r * r;
+            final double PI = 3.14159;
 
-        System.out.println("A=" + df.format(area));
+            final double raio = scanner.nextDouble();
+
+            final double area = PI * raio * raio;
+
+            sb.append("A=")
+                            .append(decimalFormat
+                                            .format(area));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-
 }

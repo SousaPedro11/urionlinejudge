@@ -9,11 +9,26 @@ public class P_1003 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
-        final int a = scanner.nextInt();
-        final int b = scanner.nextInt();
-        final int soma = a + b;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        System.out.println("SOMA = " + soma);
+        try {
+            scanner = new Scanner(System.in);
+
+            final int a = scanner.nextInt();
+            final int b = scanner.nextInt();
+            final int soma = a + b;
+
+            sb.append("SOMA = ")
+                            .append(soma);
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

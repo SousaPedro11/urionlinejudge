@@ -10,17 +10,33 @@ public class P_1009 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-        final String nome = scanner.next();
-        final double salarioFixo = scanner.nextDouble();
-        final double vendas = scanner.nextDouble();
-        final double comissao = 0.15;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double salario = salarioFixo + (vendas * comissao);
+        try {
+            scanner = new Scanner(System.in);
 
-        System.out.println("TOTAL = R$ " + decimalFormat.format(salario));
+            @SuppressWarnings("unused")
+            final String nome = scanner.next();
+            final double salarioFixo = scanner.nextDouble();
+            final double vendas = scanner.nextDouble();
+            final double comissao = 0.15;
+
+            final double salario = salarioFixo + (vendas * comissao);
+
+            sb.append("TOTAL = R$ ")
+                            .append(decimalFormat
+                                            .format(salario));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
 
     }
 }

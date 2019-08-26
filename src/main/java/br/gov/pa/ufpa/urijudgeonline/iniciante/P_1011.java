@@ -21,15 +21,31 @@ public class P_1011 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.000");
 
-        final double raio = scanner.nextDouble();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double pi = 3.14159;
+        try {
+            scanner = new Scanner(System.in);
 
-        final double volume = (4.0 / 3.0) * pi * Math.pow(raio, 3);
+            final double raio = scanner.nextDouble();
 
-        System.out.println("VOLUME = " + decimalFormat.format(volume));
+            final double pi = 3.14159;
+
+            final double volume = (4.0 / 3.0) * pi * Math.pow(raio, 3);
+
+            sb.append("VOLUME = ")
+                            .append(decimalFormat
+                                            .format(volume));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

@@ -9,17 +9,29 @@ public class P_1007 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int a = scanner.nextInt();
-        final int b = scanner.nextInt();
-        final int c = scanner.nextInt();
-        final int d = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        final int diferenca = (a * b) - (c * d);
+            final int a = scanner.nextInt();
+            final int b = scanner.nextInt();
+            final int c = scanner.nextInt();
+            final int d = scanner.nextInt();
 
-        System.out.println("DIFERENCA = " + diferenca);
+            final int diferenca = (a * b) - (c * d);
+
+            sb.append("DIFERENCA = ")
+                            .append(diferenca);
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
 
     }
-
 }

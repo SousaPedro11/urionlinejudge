@@ -10,23 +10,36 @@ public class P_1010 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-        int cod;
-        int num;
-        double valor;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        double total = 0.0;
+        try {
+            scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 2; i++) {
-            cod = scanner.nextInt();
-            num = scanner.nextInt();
-            valor = scanner.nextDouble();
+            double total = 0.0;
 
-            total += num * valor;
+            for (int i = 0; i < 2; i++) {
+                @SuppressWarnings("unused")
+                final int cod = scanner.nextInt();
+                final int num = scanner.nextInt();
+                final double valor = scanner.nextDouble();
+
+                total += num * valor;
+            }
+
+            sb.append("VALOR A PAGAR: R$ ")
+                            .append(decimalFormat
+                                            .format(total));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
         }
 
-        System.out.println("VALOR A PAGAR: R$ " + decimalFormat.format(total));
     }
 }

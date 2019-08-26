@@ -9,22 +9,34 @@ public class P_1020 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int n = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        final int ano;
-        final int meses;
-        final int dias;
+            final int idadeEmDias = scanner.nextInt();
 
-        ano = n / 365;
+            final int ano = idadeEmDias / 365;
+            final int mes = (idadeEmDias % 365) / 30;
+            final int dia = (idadeEmDias % 365) % 30;
 
-        meses = (n % 365) / 30;
+            sb.append(ano)
+                            .append(" ano(s)")
+                            .append("\n");
+            sb.append(mes)
+                            .append(" mes(es)")
+                            .append("\n");
+            sb.append(dia)
+                            .append(" dia(s)");
 
-        dias = (n % 365) % 30;
+            System.out.println(sb.toString());
 
-        System.out.println(ano + " ano(s)");
-        System.out.println(meses + " mes(es)");
-        System.out.println(dias + " dia(s)");
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

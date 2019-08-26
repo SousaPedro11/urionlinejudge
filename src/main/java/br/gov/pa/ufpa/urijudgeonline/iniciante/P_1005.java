@@ -10,15 +10,29 @@ public class P_1005 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
-
         final DecimalFormat decimalFormat = new DecimalFormat("0.00000");
 
-        final double a = scanner.nextDouble();
-        final double b = scanner.nextDouble();
-        final double media = ((a * 3.5) + (b * 7.5)) / 11;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        System.out.println("MEDIA = " + decimalFormat.format(media));
+        try {
+            scanner = new Scanner(System.in);
+
+            final double a = scanner.nextDouble();
+            final double b = scanner.nextDouble();
+            final double media = ((a * 3.5) + (b * 7.5)) / 11;
+
+            sb.append("MEDIA = ")
+                            .append(decimalFormat
+                                            .format(media));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-
 }

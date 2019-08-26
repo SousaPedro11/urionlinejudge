@@ -1,6 +1,6 @@
 package br.gov.pa.ufpa.urijudgeonline.iniciante;
 
-import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -11,18 +11,32 @@ import java.util.Scanner;
  */
 public class P_1001 {
 
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) {
 
-        final Scanner scanner = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
 
-        final int a = scanner.nextInt();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int b = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        final int x = a + b;
+            final int a = scanner.nextInt();
 
-        System.out.printf("X = %d\n", x);
+            final int b = scanner.nextInt();
+
+            final int x = a + b;
+
+            sb.append("X = ")
+                            .append(x);
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
 
     }
-
 }

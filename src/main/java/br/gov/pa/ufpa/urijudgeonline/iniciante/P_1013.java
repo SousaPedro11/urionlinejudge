@@ -19,19 +19,26 @@ public class P_1013 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final int a = scanner.nextInt();
-        final int b = scanner.nextInt();
-        final int c = scanner.nextInt();
+        try {
+            scanner = new Scanner(System.in);
 
-        System.out.println(P_1013.maior(P_1013.maior(a, b), c) + " eh o maior");
-    }
+            final int a = scanner.nextInt();
+            final int b = scanner.nextInt();
+            final int c = scanner.nextInt();
 
-    private static int maior(final int a, final int b) {
+            sb.append(Math.max(Math.max(a, b), c))
+                            .append(" eh o maior");
 
-        final int resultado = (a + b + Math.abs(a - b)) / 2;
+            System.out.println(sb.toString());
 
-        return resultado;
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }

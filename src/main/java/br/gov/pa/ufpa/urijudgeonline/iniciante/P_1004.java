@@ -9,12 +9,26 @@ public class P_1004 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
-        final int a = scanner.nextInt();
-        final int b = scanner.nextInt();
-        final int prod = a * b;
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        System.out.println("PROD = " + prod);
+        try {
+            scanner = new Scanner(System.in);
+
+            final int a = scanner.nextInt();
+            final int b = scanner.nextInt();
+            final int prod = a * b;
+
+            sb.append("PROD = ")
+                            .append(prod);
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-
 }

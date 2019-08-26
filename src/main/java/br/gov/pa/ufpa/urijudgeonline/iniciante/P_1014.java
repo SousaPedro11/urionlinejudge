@@ -10,15 +10,30 @@ public class P_1014 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.000");
 
-        final int X = scanner.nextInt();
-        final double Y = scanner.nextDouble();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double consumo = X / Y;
+        try {
+            scanner = new Scanner(System.in);
 
-        System.out.println(decimalFormat.format(consumo) + " km/l");
+            final int X = scanner.nextInt();
+            final double Y = scanner.nextDouble();
+
+            final double consumo = X / Y;
+
+            sb.append(decimalFormat
+                            .format(consumo))
+                            .append(" km/l");
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-
 }

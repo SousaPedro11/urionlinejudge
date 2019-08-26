@@ -10,16 +10,31 @@ public class P_1017 {
 
         Locale.setDefault(Locale.US);
 
-        final Scanner scanner = new Scanner(System.in);
         final DecimalFormat decimalFormat = new DecimalFormat("0.000");
 
-        final int tempo = scanner.nextInt();
-        final int velocidade = scanner.nextInt();
+        Scanner scanner = null;
+        final StringBuilder sb = new StringBuilder();
 
-        final double distancia = velocidade * tempo;
+        try {
+            scanner = new Scanner(System.in);
 
-        final double litros = distancia / 12.0;
+            final int tempo = scanner.nextInt();
+            final int velocidade = scanner.nextInt();
 
-        System.out.println(decimalFormat.format(litros));
+            final double distancia = velocidade * tempo;
+
+            final double litros = distancia / 12.0;
+
+            sb.append(decimalFormat
+                            .format(litros));
+
+            System.out.println(sb.toString());
+
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
 }
