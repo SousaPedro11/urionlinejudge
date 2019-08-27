@@ -24,11 +24,11 @@ public class P_1061 {
             int segundoInicio = scanner.nextInt();
             scanner.next();
             final int diaFim = scanner.nextInt();
-            final int horaFim = scanner.nextInt();
+            int horaFim = scanner.nextInt();
             scanner.next();
-            final int minutoFim = scanner.nextInt();
+            int minutoFim = scanner.nextInt();
             scanner.next();
-            final int segundoFim = scanner.nextInt();
+            int segundoFim = scanner.nextInt();
 
             final int deltaH = horaFim - horaInicio;
 
@@ -56,6 +56,11 @@ public class P_1061 {
                 resultadoHora++;
                 horaInicio++;
 
+                if (horaFim == 0) {
+                    horaFim = 24;
+
+                }
+
                 if (horaInicio == 25) {
                     horaInicio = 1;
 
@@ -67,6 +72,11 @@ public class P_1061 {
                 resultadoMinuto++;
                 minutoInicio++;
 
+                if (minutoFim == 0) {
+                    minutoFim = 60;
+
+                }
+
                 if (minutoInicio == 61) {
                     minutoInicio = 1;
 
@@ -77,6 +87,11 @@ public class P_1061 {
             while (segundoFim != segundoInicio) {
                 resultadoSegundo++;
                 segundoInicio++;
+
+                if (segundoFim == 0) {
+                    segundoFim = 60;
+
+                }
 
                 if (segundoInicio == 61) {
                     segundoInicio = 1;
@@ -97,6 +112,29 @@ public class P_1061 {
 
             if (deltaS < 0) {
                 resultadoMinuto--;
+
+            }
+
+            if (resultadoSegundo < 0) {
+                resultadoSegundo += 60;
+                resultadoMinuto--;
+
+            }
+
+            if (resultadoMinuto < 0) {
+                resultadoMinuto += 60;
+                resultadoHora--;
+
+            }
+
+            if (resultadoHora < 0) {
+                resultadoHora += 24;
+                resultadoDia--;
+
+            }
+
+            if (resultadoDia < 0) {
+                resultadoDia += 30;
 
             }
 
