@@ -1,5 +1,7 @@
 package br.gov.pa.ufpa.urijudgeonline.iniciante;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -17,11 +19,7 @@ public class P_2869 {
 
             final int n = scanner.nextInt();
 
-            for (int i = 1; i <= n; i++) {
-                if ((n % i) == 0) {
-                    System.out.println(i);
-                }
-            }
+            P_2869.dividers(n);
 
             // System.out.println(sb.toString());
 
@@ -31,6 +29,26 @@ public class P_2869 {
 
             }
         }
+
+    }
+
+    private static int dividers(final int n) {
+
+        final List<Integer> list = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if ((n % i) == 0) {
+                // System.out.println(i);
+                list.add(i);
+
+            }
+
+        }
+
+        System.out.println("Nº de divisores: " + list.size());
+        list.forEach(System.out::println);
+
+        return list.size();
 
     }
 }
