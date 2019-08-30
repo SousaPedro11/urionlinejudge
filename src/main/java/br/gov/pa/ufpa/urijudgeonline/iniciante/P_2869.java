@@ -1,7 +1,5 @@
 package br.gov.pa.ufpa.urijudgeonline.iniciante;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -32,23 +30,60 @@ public class P_2869 {
 
     }
 
-    private static int dividers(final int n) {
+    private static int dividers(int n) {
 
-        final List<Integer> list = new ArrayList<>();
+        int count = 0;
 
-        for (int i = 1; i <= n; i++) {
+        int i = 2;
+        while (n >= 1) {
             if ((n % i) == 0) {
-                // System.out.println(i);
-                list.add(i);
-
+                n = n / i;
+                System.out.println(i);
+                count++;
+            } else if (n == 1) {
+                break;
+            } else {
+                i++;
             }
-
         }
 
-        System.out.println("Nº de divisores: " + list.size());
-        list.forEach(System.out::println);
+        // System.out.println(count);
+        return count;
 
-        return list.size();
-
+        /*
+         * final boolean hash[] = new boolean[n + 1];
+         * Arrays.fill(hash, true);
+         * for (int p = 2; (p * p) < n; p++) {
+         * if (hash[p] == true) {
+         * for (int i = p * 2; i < n; i += p) {
+         * hash[i] = false;
+         * }
+         * }
+         * }
+         * // Traversing through
+         * // all prime numbers
+         * int total = 1;
+         * for (int p = 2; p <= n; p++) {
+         * if (hash[p]) {
+         * // calculate number of divisor
+         * // with formula total div =
+         * // (p1+1) * (p2+1) *.....* (pn+1)
+         * // where n = (a1^p1)*(a2^p2)....
+         * // *(an^pn) ai being prime divisor
+         * // for n and pi are their respective
+         * // power in factorization
+         * int count = 0;
+         * if ((n % p) == 0) {
+         * while ((n % p) == 0) {
+         * n = n / p;
+         * count++;
+         * }
+         * total = total * (count + 1);
+         * }
+         * }
+         * }
+         * System.out.println(total);
+         * return total;
+         */
     }
 }
