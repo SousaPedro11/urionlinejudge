@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from python.implementations.Problem2753 import Problem2753
+from python.implementations.problem2753 import Problem2753
 
 
 class Test2753(TestCase):
